@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<modification
+	xmlns="https://github.com/vqmod/vqmod"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd">
+	>
+		<id><![CDATA[[VQMOD] Bug fix: "Additional Alert Email" field not sending email issue in Opencart v.2.3.0.2]]></id>
+		<version>0.1.0</version>
+		<vqmver>2.6.3</vqmver>
+		<author>kanenas.net (aka Nikolas Branis) - nbran@kanenas.net</author>
+		<file path="admin/view/template/setting/" name="setting.tpl" error="log">
+			<operation error="skip">
+				<search position="replace"><![CDATA[<textarea name="config_mail_alert_email" rows="5" placeholder="<?php echo $entry_mail_alert_email; ?>" id="input-alert-email" class="form-control"><?php echo $config_alert_email; ?></textarea>]]></search>
+				<add><![CDATA[
+                    <textarea name="config_alert_email" rows="5" placeholder="<?php echo $entry_mail_alert_email; ?>" id="input-alert-email" class="form-control"><?php echo $config_alert_email; ?></textarea>
+				]]></add>
+			</operation>
+		</file>
+	</modification>
